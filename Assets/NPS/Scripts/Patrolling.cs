@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Patrolling : MonoBehaviour
 {
-    [SerializeField] private int _directionMovement = 1;
     public int _speed = 1;
-    private Transform _locationObject;
+
+    [SerializeField] private int _directionMovement = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _directionMovement=_directionMovement * -1;
-    }
-
-    private void Start()
-    {
-        _locationObject = gameObject.transform;
     }
 
     private void Update()
@@ -23,10 +18,8 @@ public class Patrolling : MonoBehaviour
         MovingToPoint();
     }
 
-
     private void MovingToPoint()
     {
         transform.Translate(_speed * Time.deltaTime * _directionMovement, 0, 0);
     }
-
 }

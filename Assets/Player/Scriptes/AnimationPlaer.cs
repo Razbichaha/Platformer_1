@@ -13,6 +13,7 @@ public class AnimationPlaer : MonoBehaviour
     {
         _animator.SetBool(AnimationRun, true);
     }
+
     public void RunStop()
     {
         _animator.SetBool(AnimationRun, false);
@@ -28,6 +29,7 @@ public class AnimationPlaer : MonoBehaviour
         _animator.SetBool(AnimationWalk, true);
 
     }
+
     public void WalkStop()
     {
         _animator.SetBool(AnimationWalk, false);

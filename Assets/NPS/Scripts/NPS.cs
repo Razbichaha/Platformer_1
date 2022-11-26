@@ -3,22 +3,17 @@ using UnityEngine;
 
 public class NPS : MonoBehaviour
 {
-    [SerializeField] private int _directionMovement = 1;
-    public int _speed = 5;
-    public int _stopRigidbodyTime = 2;
-    private Transform _locationObject;
+    static private int _stopRigidbodyTime = 2;
+    private int _directionMovement = 1;
+    private int _speed = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _directionMovement = _directionMovement * -1;
+
         StartCoroutine(SpawnNps());
     }
-
-    private void Start()
-    {
-        _locationObject = gameObject.transform;
-    }
-
+    
     private void Update()
     {
         MovingToPoint();
@@ -29,10 +24,12 @@ public class NPS : MonoBehaviour
         transform.Translate(_speed * Time.deltaTime * _directionMovement, 0, 0);
     }
 
+    WaitForSeconds _wait = new WaitForSeconds(_stopRigidbodyTime);
+
     IEnumerator SpawnNps()
     {
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
-            yield return new WaitForSeconds(_stopRigidbodyTime);
+        yield return _wait;
         gameObject.GetComponent<Rigidbody2D>().simulated = true;
     }
 }

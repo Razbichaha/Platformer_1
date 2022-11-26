@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class LincingCameraToPlaer : MonoBehaviour
 {
-    [SerializeField] private Player _player = new();
-
     private float _positioningCameraByZ = -10;
-
     private Vector3 _plaer;
     private Vector3 _camera;
+
+    [SerializeField] private PlayerMovements _player = new();
 
     private void Update()
     {
