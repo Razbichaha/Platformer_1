@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoneyKlik : MonoBehaviour
 {
     private const string AnimationDeadShpera = "deadSphera";
-    private float _pauseTime = 2f;
+    private static float _pauseTime = 2f;
 
     [SerializeField] private GameObject _score;
     [SerializeField] private GameObject _objectUnActivate;
@@ -28,9 +28,11 @@ public class MoneyKlik : MonoBehaviour
         StartCoroutine(SpherosDelete());
     }
 
+    WaitForSeconds _wait = new WaitForSeconds(_pauseTime);
+
     IEnumerator SpherosDelete()
     {
-        yield return new WaitForSeconds(_pauseTime);
+        yield return _wait;
         _objectUnActivate.SetActive(false);
     }
 
