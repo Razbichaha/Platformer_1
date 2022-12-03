@@ -26,7 +26,7 @@ public class NPS : MonoBehaviour
 
     WaitForSeconds _wait = new WaitForSeconds(_stopRigidbodyTime);
 
-    IEnumerator SpawnNps()
+   private IEnumerator SpawnNps()
     {
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
         yield return _wait;

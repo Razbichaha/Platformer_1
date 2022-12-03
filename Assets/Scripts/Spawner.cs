@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    static private int _pauseTime = 2;
+    private const int _delay = 2;
+
     private int _numberOfObject = 2;
 
     [SerializeField] private NPS _nps;
@@ -13,9 +14,9 @@ public class Spawner : MonoBehaviour
         StartCoroutine(SpawnNps());
     }
 
-    WaitForSeconds _wait = new WaitForSeconds(_pauseTime);
+    WaitForSeconds _wait = new WaitForSeconds(_delay);
 
-    IEnumerator SpawnNps()
+  private  IEnumerator SpawnNps()
     {
         for (int i = 0; i < _numberOfObject; i++)
         {

@@ -31,7 +31,7 @@ public class MoneyKlik : MonoBehaviour
 
     WaitForSeconds _wait = new WaitForSeconds(_pauseTime);
 
-    IEnumerator SpherosDelete()
+   private IEnumerator SpherosDelete()
     {
         yield return _wait;
         _objectUnActivate.SetActive(false);
