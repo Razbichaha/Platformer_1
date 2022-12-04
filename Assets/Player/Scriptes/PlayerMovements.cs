@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
+    [SerializeField] private UnityEvent _walkLeft;
+    [SerializeField] private UnityEvent _walkRight;
+    [SerializeField] private UnityEvent _walkStop;
+    [SerializeField] private UnityEvent _RunStart;
+    [SerializeField] private UnityEvent _RunStop;
+
     private float _jampPower = 5;
     private float _speed = 2;
     private float _speedRun = 4;
     private bool _thereIsMovement = false;
 
     private Quaternion _stopRotation = new Quaternion(0, 0, 0, 0);
-
-    [SerializeField] private UnityEvent _walkLeft;
-    [SerializeField] private UnityEvent _walkRight;
-    [SerializeField] private UnityEvent _walkStop;
-    [SerializeField] private UnityEvent _RunStart;
-    [SerializeField] private UnityEvent _RunStop;
 
     private void Update()
     {

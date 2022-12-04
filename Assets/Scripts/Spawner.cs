@@ -5,9 +5,9 @@ public class Spawner : MonoBehaviour
 {
     private const int _delay = 2;
 
-    private int _numberOfObject = 2;
-
     [SerializeField] private NPS _nps;
+
+    private int _numberOfObject = 2;
 
     private void Start()
     {
