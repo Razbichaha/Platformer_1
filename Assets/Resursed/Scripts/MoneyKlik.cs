@@ -7,6 +7,8 @@ public class MoneyKlik : MonoBehaviour
     private static float _pauseTime = 2f;
     private const string AnimationDeadShpera = "deadSphera";
 
+    private WaitForSeconds _wait = new WaitForSeconds(_pauseTime);
+
     [SerializeField] private GameObject _score;
     [SerializeField] private GameObject _objectUnActivate;
     [SerializeField] private Animator _speraDead;
@@ -29,12 +31,9 @@ public class MoneyKlik : MonoBehaviour
         StartCoroutine(SpherosDelete());
     }
 
-    WaitForSeconds _wait = new WaitForSeconds(_pauseTime);
-
-   private IEnumerator SpherosDelete()
+    private IEnumerator SpherosDelete()
     {
         yield return _wait;
         _objectUnActivate.SetActive(false);
     }
-
 }

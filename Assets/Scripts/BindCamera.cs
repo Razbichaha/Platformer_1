@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LincingCameraToPlaer : MonoBehaviour
+public class BindCamera : MonoBehaviour
 {
     [SerializeField] private PlayerMovements _player = new();
 
@@ -12,10 +12,10 @@ public class LincingCameraToPlaer : MonoBehaviour
     {
         _plaer = _player.transform.position;
 
-            MoveCamera();
+        Movement();
     }
 
-    private void MoveCamera()
+    private void Movement()
     {
         _camera = _plaer;
         _camera.z += _positioningCameraByZ;

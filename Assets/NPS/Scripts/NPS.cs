@@ -7,13 +7,15 @@ public class NPS : MonoBehaviour
     private int _directionMovement = 1;
     private int _speed = 1;
 
+    private WaitForSeconds _wait = new WaitForSeconds(_stopRigidbodyTime);
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _directionMovement = _directionMovement * -1;
 
-        StartCoroutine(SpawnNps());
+        StartCoroutine(SimulatedNpsStop());
     }
-    
+
     private void Update()
     {
         MovingToPoint();
@@ -24,12 +26,12 @@ public class NPS : MonoBehaviour
         transform.Translate(_speed * Time.deltaTime * _directionMovement, 0, 0);
     }
 
-    WaitForSeconds _wait = new WaitForSeconds(_stopRigidbodyTime);
-
-   private IEnumerator SpawnNps()
+    private IEnumerator SimulatedNpsStop()
     {
-        gameObject.GetComponent<Rigidbody2D>().simulated = false;
+        var component = gameObject.GetComponent<Rigidbody2D>();
+
+        component.simulated = false;
         yield return _wait;
-        gameObject.GetComponent<Rigidbody2D>().simulated = true;
+        component.simulated = true;
     }
 }
