@@ -27,7 +27,6 @@ public class AnimationPlaer : MonoBehaviour
     public void WalkRight()
     {
         _animator.SetBool(AnimationWalk, true);
-
     }
 
     public void WalkStop()

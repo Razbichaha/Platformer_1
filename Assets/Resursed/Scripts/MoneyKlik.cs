@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MoneyKlik : MonoBehaviour
 {
+    [SerializeField] private GameObject _score;
+    [SerializeField] private GameObject _objectUnActivate;
+    [SerializeField] private Animator _speraDead;
+
     private static float _pauseTime = 2f;
     private const string AnimationDeadShpera = "deadSphera";
 
     private WaitForSeconds _wait = new WaitForSeconds(_pauseTime);
-
-    [SerializeField] private GameObject _score;
-    [SerializeField] private GameObject _objectUnActivate;
-    [SerializeField] private Animator _speraDead;
 
     private void Start()
     {

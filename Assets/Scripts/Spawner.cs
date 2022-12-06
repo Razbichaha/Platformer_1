@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private const int Delay = 2;
-
-    private WaitForSeconds _wait = new WaitForSeconds(Delay);
-
     [SerializeField] private NPS _nps;
 
+    private const int Delay = 2;
+
     private int _numberOfObject = 2;
+
+    private WaitForSeconds _wait = new WaitForSeconds(Delay);
 
     private void Start()
     {
